@@ -1,0 +1,29 @@
+# AgentSmith Pipeline Configuration
+# See https://github.com/agentsmith for full documentation.
+
+pipeline:
+  # Define your pipeline steps here. Each step maps to a skill folder.
+  # - name: my_step
+  #   skill: my_skill
+
+skills_dir: ./skills
+
+runtime:
+  tools:
+    web.search: enabled
+    http.get: enabled
+  max_steps: 50
+
+self_improve:
+  enabled: true
+  replay_window: 15
+  promote_threshold: 0.70
+
+models:
+  executor:
+    provider: openai
+    model: gpt-4o
+
+store:
+  type: sqlite
+  path: ./.selfheal/runs.sqlite
