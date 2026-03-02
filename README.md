@@ -50,13 +50,41 @@ Score: 0.90
 
 The patcher added constraints like *"MUST include all named entities from the planner output"* and updated the examples to demonstrate correct behavior — automatically.
 
-## Quickstart
+## Installation
 
-### Install
+### From PyPI (recommended)
 
 ```bash
 pip install evoagents
 ```
+
+Requires Python 3.11+. That's it — the `evoagents` CLI is now available globally.
+
+### With a virtual environment (best practice)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install evoagents
+```
+
+### From source
+
+```bash
+git clone https://github.com/jatingargiitk/evoagents.git
+cd evoagents
+pip install -e .
+```
+
+### Upgrade
+
+```bash
+pip install --upgrade evoagents
+```
+
+---
+
+## Quickstart
 
 ### Initialize a project
 
@@ -240,4 +268,3 @@ evoagents (pip package)
 ## License
 
 MIT
-# evoagents
