@@ -195,4 +195,6 @@ def _add_to_pipeline(config_path: Path, skill_name: str) -> None:
     pipeline.append({"name": skill_name, "skill": skill_name})
     data["pipeline"] = pipeline
 
-    config_path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False))
+    config_path.write_text(
+        yaml.dump(data, default_flow_style=False, sort_keys=False, indent=2)
+    )

@@ -1,26 +1,32 @@
 pipeline:
-- name: perception
-  skill: perception
-- name: planner
-  skill: planner
-- name: synthesizer
-  skill: synthesizer
-- name: summarizer
-  skill: summarizer
+  - name: perception
+    skill: perception
+  - name: planner
+    skill: planner
+  - name: synthesizer
+    skill: synthesizer
+
 skills_dir: ./skills
+
 runtime:
   tools:
     web.search: enabled
     http.get: enabled
   max_steps: 50
+
 self_improve:
   enabled: true
-  replay_window: 5
-  promote_threshold: 0.7
+  replay_window: 15
+  promote_threshold: 0.70
+
 models:
   executor:
     provider: openai
-    model: gpt-4o
+    model: gpt-5.2
+  judge:
+    provider: openai
+    model: gpt-5.2
+
 store:
   type: sqlite
   path: ./.selfheal/runs.sqlite
